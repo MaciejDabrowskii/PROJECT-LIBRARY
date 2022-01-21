@@ -1,0 +1,50 @@
+body {
+    background-color: #36846B;
+}
+.modal {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 4px solid #4BB39A;
+    border-radius: 15px;
+    z-index: 10;
+    background-color: #d68438;
+    width: 500px;
+    height: 200px;
+}
+.modal-header {
+    display: flex;
+    padding: 10px 15px;
+    align-items: center;
+    justify-content: end;
+    gap: 100px;
+    border-bottom: 1px solid black;
+}
+.closeButton {
+
+}
+.modalTitle {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 25px;
+    font-weight: bolder;
+}
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0px 0px 15px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 17px;
+    font-weight: bold;
+}
+.title {
+    padding: 0 0 5px 0;
+}
+.author {
+    padding: 0 0 5px 0;
+}
+.pagesNumber {
+    padding: 0 0 5px 0;
+}

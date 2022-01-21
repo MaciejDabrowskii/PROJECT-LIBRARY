@@ -11,27 +11,40 @@
 <body>
     <div>
         <div>
-            <div>Add Book</div>
-            <div class="title">title:
-                <input id="inputTitle" type="text"/>
-            </div>
-            <div class="author">author:
-                <input id="inputAuthor" type="text"/>
-            </div>
-            <div class="pagesNumber">number of pages:
-                <input id="inputNumber" type="text"/>
-            </div>
-            <div>
-                already read:
-                <input type="checkbox" id="yes" value="Yes">
-                <label for="yes">Yes already read it</label>
-                <input type="checkbox" id="no" value="No">
-                <label for="no">No, I haven't read yet</label>
-            </div>
-            <div></div>
-            <button id="btn">Dodaj do biblioteki</button>
+            <button>My book library</button>
         </div>
-        <div></div>
+        <div class="show-books">
+
+        </div>
+        <div>
+            <button>Otwiera modal</button>
+            <div class="modal" id="modal">
+                <div class="modal-header">
+                    <div class="modalTitle">Add book to library</div>
+                    <button class="closeButton">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="title"> Title: 
+                        <input id="inputTitle" type="text"/>
+                    </div>
+                    <div class="author"> Author: 
+                        <input id="inputAuthor" type="text"/>
+                    </div>
+                    <div class="pagesNumber"> Number of pages: 
+                        <input id="inputPagesNumber" type="text"/>
+                    </div>
+                    <div class="checkbox">
+                        Already read:
+                        <input type="checkbox" id="yes" value="Yes">
+                        <label for="yes">Yes, already read it</label>
+                        <input type="checkbox" id="no" value="No">
+                        <label for="no">No, I haven't read yet</label>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    <div id="overlay"></div>
 </body>
 </html>
+
