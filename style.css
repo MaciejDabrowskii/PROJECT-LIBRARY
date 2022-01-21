@@ -7,13 +7,17 @@ body {
     flex-direction: column;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
     border: 4px solid #4BB39A;
     border-radius: 15px;
     z-index: 10;
     background-color: #d68438;
     width: 500px;
     height: 200px;
+}
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
 }
 .modal-header {
     display: flex;
@@ -39,6 +43,14 @@ body {
     font-size: 17px;
     font-weight: bold;
 }
+.closeButton {
+cursor: pointer;
+border: none;
+outline: none;
+background: none;
+font-size: 1.45rem;
+font-weight: bold;
+}
 .title {
     padding: 0 0 5px 0;
 }
@@ -47,4 +59,24 @@ body {
 }
 .pagesNumber {
     padding: 0 0 5px 0;
+}
+.input {
+    background-color: #4bb39a;
+    border: 1px solid #36846B;
+    border-radius: 7px;
+}
+#overlay {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+}
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+    transition: 200ms ease-in-out;
 }
