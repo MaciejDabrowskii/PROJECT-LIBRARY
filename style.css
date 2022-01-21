@@ -14,7 +14,7 @@ body {
     z-index: 10;
     background-color: #d68438;
     width: 500px;
-    height: 200px;
+    height: 230px;
 }
 .modal.active {
     transform: translate(-50%, -50%) scale(1);
@@ -27,8 +27,16 @@ body {
     gap: 100px;
     border-bottom: 1px solid black;
 }
-.closeButton {
-
+#addToLibrary {
+    width: 150px;
+    height: 50px;
+    margin: 5px 160px 0px 160px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-weight: bolder;
+    background-color: #4BB39A;
+    border: 2px solid #36846B;
+    border-radius: 10px;
 }
 .modalTitle {
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -38,7 +46,7 @@ body {
 .modal-body {
     display: flex;
     flex-direction: column;
-    margin: 20px 0px 0px 15px;
+    margin: 20px 15px 0px 15px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 17px;
     font-weight: bold;
@@ -64,6 +72,8 @@ font-weight: bold;
     background-color: #4bb39a;
     border: 1px solid #36846B;
     border-radius: 7px;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 #overlay {
     position: fixed;
