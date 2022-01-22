@@ -4,6 +4,7 @@ const openButton = document.getElementById("open");
 const overlay = document.getElementById("overlay");
 const closeButton = document.getElementById('close');
 const addButton = document.getElementById("addToLibrary");
+const libraryButton = document.getElementById('library');
 
 openButton.addEventListener('click', function() {
         const modal = document.getElementById('modal');
@@ -48,3 +49,13 @@ function Book(title, author, pagesNumber, alreadyRead) {
         this.alreadyRead = alreadyRead
         this.info = () => (`${title} by ${author}, ${pagesNumber} pages, ${alreadyRead}.`)
 }
+
+libraryButton.addEventListener('click', () => {
+    myLibrary.forEach(book => {
+        const bookCardsDiv = document.querySelector('.show-books');
+        const div = document.createElement('div');
+        div.classList.add('book-card');
+        div.textContent = `Title: ${book.title}\ Author: ${book.author}\ Number of Pages: ${book.pagesNumber}\ Already read: ${book.alreadyRead}`;
+        bookCardsDiv.appendChild(div);
+    })
+})
