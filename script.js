@@ -73,24 +73,39 @@ libraryButton.addEventListener('click', () => {
         const bookCardsDiv = document.querySelector('.show-books');
 
         if(clickCounter === 0) {
-            myLibrary.forEach(book => {
+            myLibrary.forEach((book, i) => {
             const div = document.createElement('div');
             div.classList.add('book-card');
             div.innerHTML = '<p>' + `Title: ${book.title}` + '</p>' + '<p>' + `Author: ${book.author}` + '</p>' + '<p>' + `Number of Pages: ${book.pagesNumber}` + '</p>' + '<p>' + `Already Read: ${book.alreadyRead}` + '</p>';
             bookCardsDiv.appendChild(div);
-            console.log(div.textContent);
+            book["id"] = i;
+            const divBookCard = document.querySelectorAll('.book-card');
+            console.log(divBookCard);
+            for (let j = 0; j < 2; j++) {
+                if(j === 0){
+                    const cardButton = document.createElement('button');
+                    cardButton.classList.add(`cardButton${i}`);
+                    cardButton.innerHTML = `Delete book`;
+                    divBookCard[i].appendChild(cardButton);
+                }else {
+                    const cardButton = document.createElement('button');
+                    cardButton.classList.add(`cardButton${i}`);
+                    cardButton.innerHTML = `Switch read status`;
+                    divBookCard[i].appendChild(cardButton);
+                }
+            }
             })
             clickCounter += 1;
         }
         
         else {
             removeAllChildNodes(bookCardsDiv);
-            myLibrary.forEach(book => {
+            myLibrary.forEach((book, i) => {
                 const div = document.createElement('div');
                 div.classList.add('book-card');
                 div.innerHTML = '<p>' + `Title: ${book.title}` + '</p>' + '<p>' + `Author: ${book.author}` + '</p>' + '<p>' + `Number of Pages: ${book.pagesNumber}` + '</p>' + '<p>' + `Already Read: ${book.alreadyRead}` + '</p>';
                 bookCardsDiv.appendChild(div);
-                console.log(div.textContent);
+                book["id"] = i;
                 })
         }
     }
