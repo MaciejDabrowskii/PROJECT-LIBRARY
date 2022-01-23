@@ -19,6 +19,7 @@ body {
     background-color:#F9E4C8;
     width: 950px;
     height: 670px;
+    border: 7px solid white;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 .modal.active {
