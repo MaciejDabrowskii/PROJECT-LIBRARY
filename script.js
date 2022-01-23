@@ -14,10 +14,7 @@ openButton.addEventListener('click', function() {
 );
 
 closeButton.addEventListener('click', () => {
-        const title = document.getElementById("inputTitle");
-        const author = document.getElementById("inputAuthor");
-        const pagesNumber = document.getElementById("inputNumber");
-        reset(title, author, pagesNumber);
+    reset()
     }
 );
 
@@ -38,32 +35,10 @@ addButton.addEventListener("click", ()=> {
         };
         const book = new Book(title.value, author.value, pagesNumber.value, alreadyRead)
         myLibrary.push(book);
-        reset(title, author, pagesNumber);
+        reset();
 
     }
 );
-
-function removeAllChildNodes(parent) {
-    while (parent.firstChild) {
-        parent.removeChild(parent.firstChild);
-    }
-}
-
-function reset(title, author, pagesNumber) {
-    title.value = "";
-    author.value = "";
-    pagesNumber.value = "";
-    modal.classList.remove('active');
-    overlay.classList.remove('active');
-}
-
-function Book(title, author, pagesNumber, alreadyRead) {
-        this.title = title
-        this.author = author
-        this.pagesNumber = pagesNumber
-        this.alreadyRead = alreadyRead
-        this.info = () => (`${title} by ${author}, ${pagesNumber} pages, ${alreadyRead}.`)
-}
 
 libraryButton.addEventListener('click', () => {
     if (myLibrary[0] === undefined) {
@@ -86,6 +61,32 @@ libraryButton.addEventListener('click', () => {
         }
     }
 })
+
+
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
+
+function reset() {
+    const title = document.getElementById("inputTitle");
+    const author = document.getElementById("inputAuthor");
+    const pagesNumber = document.getElementById("inputNumber");
+    title.value = "";
+    author.value = "";
+    pagesNumber.value = "";
+    modal.classList.remove('active');
+    overlay.classList.remove('active');
+}
+
+function Book(title, author, pagesNumber, alreadyRead) {
+        this.title = title
+        this.author = author
+        this.pagesNumber = pagesNumber
+        this.alreadyRead = alreadyRead
+        this.info = () => (`${title} by ${author}, ${pagesNumber} pages, ${alreadyRead}.`)
+}
 
 function switchButtonFunctions() {
     const buttonSwitchRead = document.querySelectorAll(".cardButton1");
@@ -110,6 +111,14 @@ function deleteButtonFunctions() {
         });
     });
 }
+
+overlay.addEventListener('click', () => {
+    const modals = document.querySelectorAll('.modal.active')
+    modals.forEach(modal => {
+        
+        reset();
+    })
+})
 
 function addingBookcards(bookCardsDiv) {
     myLibrary.forEach((book, i) => {
