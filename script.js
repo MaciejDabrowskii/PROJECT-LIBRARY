@@ -74,26 +74,26 @@ libraryButton.addEventListener('click', () => {
 
         if(clickCounter === 0) {
             myLibrary.forEach((book, i) => {
-            const div = document.createElement('div');
-            div.classList.add('book-card');
-            div.innerHTML = '<p>' + `Title: ${book.title}` + '</p>' + '<p>' + `Author: ${book.author}` + '</p>' + '<p>' + `Number of Pages: ${book.pagesNumber}` + '</p>' + '<p>' + `Already Read: ${book.alreadyRead}` + '</p>';
-            bookCardsDiv.appendChild(div);
-            book["id"] = i;
-            const divBookCard = document.querySelectorAll('.book-card');
-            console.log(divBookCard);
-            for (let j = 0; j < 2; j++) {
-                if(j === 0){
-                    const cardButton = document.createElement('button');
-                    cardButton.classList.add(`cardButton${j}`);
-                    cardButton.innerHTML = `Delete book`;
-                    divBookCard[i].appendChild(cardButton);
-                }else {
-                    const cardButton = document.createElement('button');
-                    cardButton.classList.add(`cardButton${j}`);
-                    cardButton.innerHTML = `Switch read status`;
-                    divBookCard[i].appendChild(cardButton);
+                const div = document.createElement('div');
+                div.classList.add('book-card');
+                div.innerHTML = '<p>' + `Title: ${book.title}` + '</p>' + '<p>' + `Author: ${book.author}` + '</p>' + '<p>' + `Number of Pages: ${book.pagesNumber}` + '</p>' + '<p>' + `Already Read: ${book.alreadyRead}` + '</p>';
+                bookCardsDiv.appendChild(div);
+                book["id"] = i;
+                const divBookCard = document.querySelectorAll('.book-card');
+                console.log(divBookCard);
+                for (let j = 0; j < 2; j++) {
+                    if(j === 0){
+                        const cardButton = document.createElement('button');
+                        cardButton.classList.add(`cardButton${j}`);
+                        cardButton.innerHTML = `Delete book`;
+                        divBookCard[i].appendChild(cardButton);
+                    }else {
+                        const cardButton = document.createElement('button');
+                        cardButton.classList.add(`cardButton${j}`);
+                        cardButton.innerHTML = `Switch read status`;
+                        divBookCard[i].appendChild(cardButton);
+                    }
                 }
-            }
             })
             clickCounter += 1;
         }
@@ -106,7 +106,21 @@ libraryButton.addEventListener('click', () => {
                 div.innerHTML = '<p>' + `Title: ${book.title}` + '</p>' + '<p>' + `Author: ${book.author}` + '</p>' + '<p>' + `Number of Pages: ${book.pagesNumber}` + '</p>' + '<p>' + `Already Read: ${book.alreadyRead}` + '</p>';
                 bookCardsDiv.appendChild(div);
                 book["id"] = i;
-                })
+                const divBookCard = document.querySelectorAll('.book-card');
+                for (let j = 0; j < 2; j++) {
+                    if(j === 0){
+                        const cardButton = document.createElement('button');
+                        cardButton.classList.add(`cardButton${j}`);
+                        cardButton.innerHTML = `Delete book`;
+                        divBookCard[i].appendChild(cardButton);
+                    }else {
+                        const cardButton = document.createElement('button');
+                        cardButton.classList.add(`cardButton${j}`);
+                        cardButton.innerHTML = `Switch read status`;
+                        divBookCard[i].appendChild(cardButton);
+                    }
+                }
+            })
         }
     }
 })
