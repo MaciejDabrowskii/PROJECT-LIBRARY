@@ -95,9 +95,9 @@ color: #ffffff;
     margin-bottom: 8px;
 }
 input:focus {
-    border-color: #ffffff;
+    border-color: #f9cf93;
     outline: none;
-    box-shadow: #f9ce93e3 0px 20px 30px;
+    box-shadow: #f9ce9363 0px 20px 30px;
 }
 input:target {
     border-color: #f9cf93;
