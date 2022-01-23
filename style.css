@@ -338,3 +338,11 @@ label {
 .cardButton1:hover {
     background-color:#F9E4C8;
 }
+p {
+    margin: 0;
+    padding:20px;
+    border-bottom: 2px solid #F9CF93;
+}
+p:last-of-type {
+    border: none;
+}
