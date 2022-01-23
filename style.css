@@ -170,7 +170,7 @@ input:target {
     font-weight: bold;
     background-color: #dbd0c0d7;
     Font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-    color: #ffffffd7;
+    color: #ffffff;
     border: 4px double #FAEEE0;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
 }
@@ -383,4 +383,13 @@ p:last-of-type {
     border-radius: 50%;
     font-size: 20px;
     margin-left: 10px;
+}
+.card-data {
+    Font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 23px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #F9CF93;
+    padding: 1px 4px;
+    border-radius: 8px;
 }

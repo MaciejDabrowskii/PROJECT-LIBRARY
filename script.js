@@ -126,7 +126,7 @@ function addingBookcards(bookCardsDiv) {
     myLibrary.forEach((book, i) => {
         const div = document.createElement('div');
         div.classList.add('book-card');
-        div.innerHTML = '<p>' + `Title: ${book.title}` + '</p>' + '<p>' + `Author: ${book.author}` + '</p>' + '<p>' + `Number of Pages: ${book.pagesNumber}` + '</p>' + '<p>' + `Already read: ${book.alreadyRead}` + '</p>';
+        div.innerHTML = '<p>' + `Title: <span class="card-data">${book.title}</span>` + '</p>' + '<p>' + `Author: <span class="card-data">${book.author}</span>` + '</p>' + '<p>' + `Number of pages: <span class="card-data">${book.pagesNumber}</span>` + '</p>' + '<p>' + `Already read: <span class="card-data">${book.alreadyRead}</span>` + '</p>';
         bookCardsDiv.appendChild(div);
         const divBookCard = document.querySelectorAll('.book-card');
 
