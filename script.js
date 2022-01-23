@@ -28,6 +28,7 @@ addButton.addEventListener("click", ()=> {
         const pagesNumber = document.getElementById("inputNumber");
         const modal = document.getElementById('modal');
         const radioButton = document.querySelectorAll(('input[name="read"]'));
+        
         let alreadyRead;
         checkButton();
         function checkButton() {
@@ -95,6 +96,26 @@ libraryButton.addEventListener('click', () => {
                     }
                 }
             })
+            const buttonDeleteBook = document.querySelectorAll(".cardButton0");
+            buttonDeleteBook.forEach((button, index) => {
+                button.addEventListener("click", () => {
+                myLibrary.splice(index, 1);
+                })
+            })
+            const buttonSwitchRead = document.querySelectorAll(".cardButton1");
+            console.log(buttonSwitchRead);
+            buttonSwitchRead.forEach((button, index) => {
+                button.addEventListener("click", () => {
+
+                    if(myLibrary[index].alreadyRead === undefined || myLibrary[index].alreadyRead === "No") {
+                        myLibrary[index].alreadyRead = "Yes";
+                    }
+                    else {
+                        myLibrary[index].alreadyRead = "No";
+                    }
+                })
+            })
+
             clickCounter += 1;
         }
         
@@ -120,6 +141,25 @@ libraryButton.addEventListener('click', () => {
                         divBookCard[i].appendChild(cardButton);
                     }
                 }
+            })
+            const buttonDeleteBook = document.querySelectorAll(".cardButton0")
+            buttonDeleteBook.forEach((button, index) => {
+                button.addEventListener("click", () => {
+                myLibrary.splice(index, 1);
+                })
+            })
+            const buttonSwitchRead = document.querySelectorAll(".cardButton1");
+            console.log(buttonSwitchRead);
+            buttonSwitchRead.forEach((button, index) => {
+                button.addEventListener("click", () => {
+                    console.log(buttonSwitchRead);
+                    if(myLibrary[index].alreadyRead === undefined || myLibrary[index].alreadyRead === "No") {
+                        myLibrary[index].alreadyRead = "Yes";
+                    }
+                    else {
+                        myLibrary[index].alreadyRead = "No";
+                    }
+                })
             })
         }
     }

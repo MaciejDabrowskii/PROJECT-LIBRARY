@@ -176,7 +176,6 @@ input:target {
     justify-content: center;
     flex: 1 0 auto;
     flex-wrap: wrap;
-    /* position: relative; */
 }
 #bookPick {
     height: auto;
@@ -277,29 +276,24 @@ label {
     border-radius: 50%;
 }
 
-/* On mouse-over, add a grey background color */
 .labelModal:hover input ~ .checkmark {
   background-color: #dbd0c0d7;
 }
 
-/* When the radio button is checked, add a blue background */
 .labelModal input:checked ~ .checkmark {
   background-color: #F9CF93;
 }
 
-/* Create the indicator (the dot/circle - hidden when not checked) */
 .checkmark:after {
   content: "";
   position: absolute;
   display: none;
 }
 
-/* Show the indicator (dot/circle) when checked */
 .labelModal input:checked ~ .checkmark:after {
   display: block;
 }
 
-/* Style the indicator (dot/circle) */
 .labelModal .checkmark:after {
     top: 9px;
     left: 9px;
