@@ -10,49 +10,61 @@ body {
     position: fixed;
     display: flex;
     flex-direction: column;
+    align-items: center;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
     transition: 200ms ease-in-out;
-    border: 4px solid #4BB39A;
-    border-radius: 15px;
     z-index: 10;
-    background-color: #d68438;
-    width: 500px;
-    height: 230px;
+    background-color:#F9E4C8;
+    width: 950px;
+    height: 670px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 .modal.active {
     transform: translate(-50%, -50%) scale(1);
 }
 .modal-header {
     display: flex;
-    padding: 10px 15px;
+    padding: 20px 15px 16px 15px;
+    width: 90%;
     align-items: center;
     justify-content: end;
-    gap: 100px;
-    border-bottom: 1px solid black;
+    gap: 90px;
+    border-bottom: 5px solid #F9CF93;
 }
 #addToLibrary {
-    width: 150px;
-    height: 50px;
-    margin: 5px 160px 0px 160px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 20px;
-    font-weight: bolder;
-    background-color: #4BB39A;
-    border: 2px solid #36846B;
-    border-radius: 10px;
+    Font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    color: #f8c47c;
+    border: 5px solid #F9CF93;
+    background-color: #F9E4C8;
+    height: 85px;
+    width: 50%;
+    font-size: 55px;
+    padding:7px;
+    transition: 0.5s;
+    margin: 25px 0;
+    transition:400ms;
 }
-.modalTitle {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 25px;
-    font-weight: bolder;
+#addToLibrary:hover {
+    background-color: white;
+}
+.modal-title {
+    margin-top: 20px;
+    Font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 55px;
+    font-weight: bold;
+    color: #ffffff;
+
 }
 .modal-body {
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin: 20px 15px 0px 15px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    Font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 17px;
     font-weight: bold;
 }
@@ -61,25 +73,56 @@ cursor: pointer;
 border: none;
 outline: none;
 background: none;
-font-size: 1.45rem;
+font-size: 2rem;
 font-weight: bold;
+color: #ffffff;
 }
-.title {
-    padding: 0 0 5px 0;
+.closeButton:hover {
+    color: #f8c47c;
 }
-.author {
-    padding: 0 0 5px 0;
-}
-.pagesNumber {
-    padding: 0 0 5px 0;
-}
+
 .input {
-    background-color: #4bb39a;
-    border: 1px solid #36846B;
-    border-radius: 7px;
+    border: 3px solid #ffffff;
+    color: #f8c47c;
     text-align: center;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    Font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    background-color:#F9E4C8;
+    height: 75px;
+    width: 100%;
+    font-size: 55px;
+    padding:5px;
+    transition: 0.5s;
+    margin-bottom: 8px;
 }
+input:focus {
+    border-color: #ffffff;
+    outline: none;
+    box-shadow: #f9ce93e3 0px 20px 30px;
+}
+input:target {
+    border-color: #f9cf93;
+}
+::placeholder {
+    color: white;
+    opacity: 1;
+}
+.radioButton {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #ffffff;
+    color: #ffffff;
+    text-align: center;
+    Font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    background-color:#F9E4C8;
+    height: 80px;
+    width: 100%;
+    font-size: 30px;
+    margin-left: 14px;
+    padding-right: 11px;
+}
+
 #overlay {
     position: fixed;
     opacity: 0;
@@ -100,7 +143,7 @@ font-weight: bold;
     display: flex;
     flex: 0 0 auto;
     flex-direction: column;
-    margin: 20px 5px;
+    margin: 20px;
     width: 300px;
     height:400px;
     padding: 15px;
@@ -110,7 +153,8 @@ font-weight: bold;
     background-color: #dbd0c0d7;
     Font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     color: #ffffffd7;
-    border: 1px double #FAEEE0;
+    border: 4px double #FAEEE0;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
 }
 .buttonsContainer {
     display: flex;
@@ -129,7 +173,7 @@ font-weight: bold;
 .cardsSpace {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     flex: 1 0 auto;
     flex-wrap: wrap;
     /* position: relative; */
@@ -201,5 +245,96 @@ font-weight: bold;
     background-color:#F9E4C8;
 }
 #open:hover {
+    background-color:#F9E4C8;
+}
+label {
+    padding-left: 6px;
+}
+.labelModal {
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    padding-left: 60px;
+    padding-right: 15px;
+}
+.labelModal input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+.checkmark {
+    position: absolute;
+    top: 4px;
+    left: 27px;
+    height: 25px;
+    width: 25px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.labelModal:hover input ~ .checkmark {
+  background-color: #dbd0c0d7;
+}
+
+/* When the radio button is checked, add a blue background */
+.labelModal input:checked ~ .checkmark {
+  background-color: #F9CF93;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.labelModal input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.labelModal .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+.cardButton0 {
+    width: 284px;
+    height: 70px;
+    background:none;
+    border: 3px solid #F9CF93;
+    Font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 0 8px 8px;
+    transition: 400ms;
+}
+.cardButton1 {
+    width: 284px;
+    height: 70px;
+    background:none;
+    border: 3px solid #F9CF93;
+    Font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 8px;
+    transition: 300px;
+}
+.cardButton0:hover {
+    background-color:#F9E4C8;
+}
+.cardButton1:hover {
     background-color:#F9E4C8;
 }

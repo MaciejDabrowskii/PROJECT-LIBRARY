@@ -24,27 +24,33 @@
     <div id="overlay"></div>
     <div class="modal" id="modal">
         <div class="modal-header">
-            <div class="modalTitle">Add book to library</div>
+            <div class="modal-title">ADD BOOK TO LIBRARY</div>
             <button class="closeButton" id="close">&times;</button>
         </div>
         <div class="modal-body">
-            <div class="title"> Title: 
-                <input class="input" id="inputTitle" type="text"/>
+            <div class="title">
+                <input class="input" placeholder="Title"id="inputTitle" type="text"/>
             </div>
-            <div class="author"> Author: 
-                <input class="input" id="inputAuthor" type="text"/>
+            <div class="author">  
+                <input class="input" placeholder="Author" id="inputAuthor" type="text"/>
             </div>
-            <div class="pagesNumber"> Number of pages: 
-                <input class="input" id="inputNumber" type="text"/>
+            <div class="pagesNumber">
+                <input class="input" placeholder="Number of pages" id="inputNumber" type="text"/>
             </div>
             <div class="radioButton">
                 Already read:
-                <input type="radio" name="read" id="yes" value="Yes">
-                <label for="yes">Yes</label>
-                <input type="radio" name="read" id="no" value="No">
-                <label for="no">No</label>
+                
+                <label class="labelModal" for="yes">Yes
+                    <input type="radio" name="read" id="yes" value="Yes">
+                    <span class="checkmark"></span>
+                </label>
+                
+                <label class="labelModal" for="no">No
+                    <input type="radio" name="read" id="no" value="No">
+                    <span class="checkmark"></span>
+                </label>
             </div>
-            <button id="addToLibrary">Add to library</button>
+            <button id="addToLibrary">Add</button>
         </div>
     </div> 
     <div class="libraryBody">
