@@ -50,6 +50,7 @@ body {
 }
 #addToLibrary:hover {
     background-color: white;
+    cursor: pointer;
 }
 .modal-title {
     margin-top: 20px;

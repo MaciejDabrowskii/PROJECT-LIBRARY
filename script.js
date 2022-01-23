@@ -14,7 +14,6 @@ openButton.addEventListener('click', function() {
 );
 
 closeButton.addEventListener('click', () => {
-        const modal = document.getElementById('modal');
         const title = document.getElementById("inputTitle");
         const author = document.getElementById("inputAuthor");
         const pagesNumber = document.getElementById("inputNumber");
@@ -26,7 +25,6 @@ addButton.addEventListener("click", ()=> {
         const title = document.getElementById("inputTitle");
         const author = document.getElementById("inputAuthor");
         const pagesNumber = document.getElementById("inputNumber");
-        const modal = document.getElementById('modal');
         const radioButton = document.querySelectorAll(('input[name="read"]'));
         
         let alreadyRead;
@@ -74,93 +72,65 @@ libraryButton.addEventListener('click', () => {
         const bookCardsDiv = document.querySelector('.cardsSpace');
 
         if(clickCounter === 0) {
-            myLibrary.forEach((book, i) => {
-                const div = document.createElement('div');
-                div.classList.add('book-card');
-                div.innerHTML = '<p>' + `Title: ${book.title}` + '</p>' + '<p>' + `Author: ${book.author}` + '</p>' + '<p>' + `Number of Pages: ${book.pagesNumber}` + '</p>' + '<p>' + `Already Read: ${book.alreadyRead}` + '</p>';
-                bookCardsDiv.appendChild(div);
-                book["id"] = i;
-                const divBookCard = document.querySelectorAll('.book-card');
-                console.log(divBookCard);
-                for (let j = 0; j < 2; j++) {
-                    if(j === 0){
-                        const cardButton = document.createElement('button');
-                        cardButton.classList.add(`cardButton${j}`);
-                        cardButton.innerHTML = `Delete book`;
-                        divBookCard[i].appendChild(cardButton);
-                    }else {
-                        const cardButton = document.createElement('button');
-                        cardButton.classList.add(`cardButton${j}`);
-                        cardButton.innerHTML = `Switch read status`;
-                        divBookCard[i].appendChild(cardButton);
-                    }
-                }
-            })
-            const buttonDeleteBook = document.querySelectorAll(".cardButton0");
-            buttonDeleteBook.forEach((button, index) => {
-                button.addEventListener("click", () => {
-                myLibrary.splice(index, 1);
-                })
-            })
-            const buttonSwitchRead = document.querySelectorAll(".cardButton1");
-            console.log(buttonSwitchRead);
-            buttonSwitchRead.forEach((button, index) => {
-                button.addEventListener("click", () => {
-
-                    if(myLibrary[index].alreadyRead === undefined || myLibrary[index].alreadyRead === "No") {
-                        myLibrary[index].alreadyRead = "Yes";
-                    }
-                    else {
-                        myLibrary[index].alreadyRead = "No";
-                    }
-                })
-            })
-
+            addingBookcards(bookCardsDiv);
+            deleteButtonFunctions();
+            switchButtonFunctions();
             clickCounter += 1;
         }
         
         else {
             removeAllChildNodes(bookCardsDiv);
-            myLibrary.forEach((book, i) => {
-                const div = document.createElement('div');
-                div.classList.add('book-card');
-                div.innerHTML = '<p>' + `Title: ${book.title}` + '</p>' + '<p>' + `Author: ${book.author}` + '</p>' + '<p>' + `Number of Pages: ${book.pagesNumber}` + '</p>' + '<p>' + `Already Read: ${book.alreadyRead}` + '</p>';
-                bookCardsDiv.appendChild(div);
-                book["id"] = i;
-                const divBookCard = document.querySelectorAll('.book-card');
-                for (let j = 0; j < 2; j++) {
-                    if(j === 0){
-                        const cardButton = document.createElement('button');
-                        cardButton.classList.add(`cardButton${j}`);
-                        cardButton.innerHTML = `Delete book`;
-                        divBookCard[i].appendChild(cardButton);
-                    }else {
-                        const cardButton = document.createElement('button');
-                        cardButton.classList.add(`cardButton${j}`);
-                        cardButton.innerHTML = `Switch read status`;
-                        divBookCard[i].appendChild(cardButton);
-                    }
-                }
-            })
-            const buttonDeleteBook = document.querySelectorAll(".cardButton0")
-            buttonDeleteBook.forEach((button, index) => {
-                button.addEventListener("click", () => {
-                myLibrary.splice(index, 1);
-                })
-            })
-            const buttonSwitchRead = document.querySelectorAll(".cardButton1");
-            console.log(buttonSwitchRead);
-            buttonSwitchRead.forEach((button, index) => {
-                button.addEventListener("click", () => {
-                    console.log(buttonSwitchRead);
-                    if(myLibrary[index].alreadyRead === undefined || myLibrary[index].alreadyRead === "No") {
-                        myLibrary[index].alreadyRead = "Yes";
-                    }
-                    else {
-                        myLibrary[index].alreadyRead = "No";
-                    }
-                })
-            })
+            addingBookcards(bookCardsDiv);
+            deleteButtonFunctions();
+            switchButtonFunctions()
         }
     }
 })
+
+function switchButtonFunctions() {
+    const buttonSwitchRead = document.querySelectorAll(".cardButton1");
+    buttonSwitchRead.forEach((button, index) => {
+        button.addEventListener("click", () => {
+
+            if (typeof myLibrary[index].alreadyRead === 'undefined' || myLibrary[index].alreadyRead === "No") {
+                myLibrary[index].alreadyRead = "Yes";
+            }
+            else {
+                myLibrary[index].alreadyRead = "No";
+            }
+        });
+    });
+}
+
+function deleteButtonFunctions() {
+    const buttonDeleteBook = document.querySelectorAll(".cardButton0");
+    buttonDeleteBook.forEach((button, index) => {
+        button.addEventListener("click", () => {
+            myLibrary.splice(index, 1);
+        });
+    });
+}
+
+function addingBookcards(bookCardsDiv) {
+    myLibrary.forEach((book, i) => {
+        const div = document.createElement('div');
+        div.classList.add('book-card');
+        div.innerHTML = '<p>' + `Title: ${book.title}` + '</p>' + '<p>' + `Author: ${book.author}` + '</p>' + '<p>' + `Number of Pages: ${book.pagesNumber}` + '</p>' + '<p>' + `Already Read: ${book.alreadyRead}` + '</p>';
+        bookCardsDiv.appendChild(div);
+        const divBookCard = document.querySelectorAll('.book-card');
+
+        for (let j = 0; j < 2; j++) {
+            if (j === 0) {
+                const cardButton = document.createElement('button');
+                cardButton.classList.add(`cardButton${j}`);
+                cardButton.innerHTML = `Delete book`;
+                divBookCard[i].appendChild(cardButton);
+            } else {
+                const cardButton = document.createElement('button');
+                cardButton.classList.add(`cardButton${j}`);
+                cardButton.innerHTML = `Switch read status`;
+                divBookCard[i].appendChild(cardButton);
+            }
+        }
+    });
+}
