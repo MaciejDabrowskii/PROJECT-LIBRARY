@@ -124,7 +124,23 @@ input:target {
     margin-left: 14px;
     padding-right: 11px;
 }
-
+.radioButton.entered {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #f9cf93;
+    color: #f9cf93;
+    text-align: center;
+    Font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    background-color:#F9E4C8;
+    height: 80px;
+    width: 100%;
+    font-size: 30px;
+    margin-left: 14px;
+    padding-right: 11px;
+    box-shadow: #f9ce9363 0px 20px 30px;
+}
 #overlay {
     position: fixed;
     opacity: 0;

@@ -6,10 +6,12 @@ const addButton = document.getElementById("addToLibrary");
 const libraryButton = document.getElementById('library');
 let clickCounter = 0;
 
+
 openButton.addEventListener('click', function() {
         const modal = document.getElementById('modal');
         modal.classList.add('active');
         overlay.classList.add('active');
+        styleRadioButton()
     }
 );
 
@@ -142,4 +144,14 @@ function addingBookcards(bookCardsDiv) {
             }
         }
     });
+}
+
+function styleRadioButton() {
+    const radioButton1 = document.querySelector(".radioButton");
+    radioButton1.addEventListener("mouseenter", (e => {
+        radioButton1.classList.add("entered")
+    }));
+    radioButton1.addEventListener("mouseleave", (e => {
+        radioButton1.classList.remove("entered")
+    }));
 }
