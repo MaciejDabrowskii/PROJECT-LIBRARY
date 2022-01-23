@@ -9,43 +9,50 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div>
-        <div>
-            <button id="library">My book library</button>
-        </div>
-        <div class="show-books">
-
-        </div>
-        <div>
-            <button id="open">Otwiera modal</button>
-            <div class="modal" id="modal">
-                <div class="modal-header">
-                    <div class="modalTitle">Add book to library</div>
-                    <button class="closeButton" id="close">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <div class="title"> Title: 
-                        <input class="input" id="inputTitle" type="text"/>
-                    </div>
-                    <div class="author"> Author: 
-                        <input class="input" id="inputAuthor" type="text"/>
-                    </div>
-                    <div class="pagesNumber"> Number of pages: 
-                        <input class="input" id="inputNumber" type="text"/>
-                    </div>
-                    <div class="radioButton">
-                        Already read:
-                        <input type="radio" name="read" id="yes" value="Yes">
-                        <label for="yes">Yes</label>
-                        <input type="radio" name="read" id="no" value="No">
-                        <label for="no">No</label>
-                    </div>
-                    <button id="addToLibrary">Add to library</button>
-                </div>
+   <div class="main">
+    <div class="booksWritingContiner">BOOKS</div>
+    <div class="buttonsContainer">
+            <div>
+                <button id="library">My book library</button>
+            </div>
+            <div>
+                <button id="open">Otwiera modal</button>
             </div>
         </div>
+        <img id="bookPick" src="img1.jpg" alt="Image">
     </div>
     <div id="overlay"></div>
+    <div class="modal" id="modal">
+        <div class="modal-header">
+            <div class="modalTitle">Add book to library</div>
+            <button class="closeButton" id="close">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="title"> Title: 
+                <input class="input" id="inputTitle" type="text"/>
+            </div>
+            <div class="author"> Author: 
+                <input class="input" id="inputAuthor" type="text"/>
+            </div>
+            <div class="pagesNumber"> Number of pages: 
+                <input class="input" id="inputNumber" type="text"/>
+            </div>
+            <div class="radioButton">
+                Already read:
+                <input type="radio" name="read" id="yes" value="Yes">
+                <label for="yes">Yes</label>
+                <input type="radio" name="read" id="no" value="No">
+                <label for="no">No</label>
+            </div>
+            <button id="addToLibrary">Add to library</button>
+        </div>
+    </div> 
+    <div class="libraryBody">
+        <div class="libraryHeader">My books library</div>
+        <div class="cardsSpace">
+        </div>
+    </div>
+    
 </body>
 </html>
 

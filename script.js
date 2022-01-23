@@ -70,7 +70,7 @@ libraryButton.addEventListener('click', () => {
     if (myLibrary[0] === undefined) {
         alert("No books in library yet, please add books")
     }else {
-        const bookCardsDiv = document.querySelector('.show-books');
+        const bookCardsDiv = document.querySelector('.cardsSpace');
 
         if(clickCounter === 0) {
             myLibrary.forEach((book, i) => {
@@ -84,12 +84,12 @@ libraryButton.addEventListener('click', () => {
             for (let j = 0; j < 2; j++) {
                 if(j === 0){
                     const cardButton = document.createElement('button');
-                    cardButton.classList.add(`cardButton${i}`);
+                    cardButton.classList.add(`cardButton${j}`);
                     cardButton.innerHTML = `Delete book`;
                     divBookCard[i].appendChild(cardButton);
                 }else {
                     const cardButton = document.createElement('button');
-                    cardButton.classList.add(`cardButton${i}`);
+                    cardButton.classList.add(`cardButton${j}`);
                     cardButton.innerHTML = `Switch read status`;
                     divBookCard[i].appendChild(cardButton);
                 }
