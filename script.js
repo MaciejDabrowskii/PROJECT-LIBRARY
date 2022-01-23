@@ -126,7 +126,7 @@ function addingBookcards(bookCardsDiv) {
     myLibrary.forEach((book, i) => {
         const div = document.createElement('div');
         div.classList.add('book-card');
-        div.innerHTML = '<p>' + `Title: ${book.title}` + '</p>' + '<p>' + `Author: ${book.author}` + '</p>' + '<p>' + `Number of Pages: ${book.pagesNumber}` + '</p>' + '<p>' + `Already Read: ${book.alreadyRead}` + '</p>';
+        div.innerHTML = '<p>' + `Title: ${book.title}` + '</p>' + '<p>' + `Author: ${book.author}` + '</p>' + '<p>' + `Number of Pages: ${book.pagesNumber}` + '</p>' + '<p>' + `Already read: ${book.alreadyRead}` + '</p>';
         bookCardsDiv.appendChild(div);
         const divBookCard = document.querySelectorAll('.book-card');
 
@@ -134,12 +134,12 @@ function addingBookcards(bookCardsDiv) {
             if (j === 0) {
                 const cardButton = document.createElement('button');
                 cardButton.classList.add(`cardButton${j}`);
-                cardButton.innerHTML = `Delete book`;
+                cardButton.innerHTML = `Delete book <span class="x-circle">&times;</span>`;
                 divBookCard[i].appendChild(cardButton);
             } else {
                 const cardButton = document.createElement('button');
                 cardButton.classList.add(`cardButton${j}`);
-                cardButton.innerHTML = `Switch read status`;
+                cardButton.innerHTML = `Already read <span class="swap">⇵</span>`;
                 divBookCard[i].appendChild(cardButton);
             }
         }

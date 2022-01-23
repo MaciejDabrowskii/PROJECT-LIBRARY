@@ -367,3 +367,20 @@ p {
 p:last-of-type {
     border: none;
 }
+
+.swap {
+    background: #F9CF93;
+    color: #ffffff;
+    padding: 5px 9px 5px 8px;
+    border-radius: 50%;
+    font-size: 20px;
+    margin-left: 10px;
+}
+.x-circle {
+    background: #F9CF93;
+    color: #ffffff;
+    padding: 5px 10px 5px 11px;
+    border-radius: 50%;
+    font-size: 20px;
+    margin-left: 10px;
+}
