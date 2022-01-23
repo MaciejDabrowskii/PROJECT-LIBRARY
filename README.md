@@ -1,4 +1,4 @@
 # PROJECT-LIBRARY
 I'll make small library app 
  Assignment:
- /home/jimmy/the_odin_project/java/PROJECT-LIBRARY/PROJECT-LIBRARY/index.html
+https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/library#assignment
