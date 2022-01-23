@@ -195,6 +195,7 @@ input:target {
     height: 950px;
     position: relative;
     background-color: #FAEEE0;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 .booksWritingContiner {
     display: flex;
@@ -207,19 +208,22 @@ input:target {
     font-size: 80px;
     font-weight: bolder;
 }
-.libraryHeader {
+.library-header {
     Font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     color: #F9CF93;
     font-size: 80px;
     font-weight: bolder;
     margin-top: 40px;
 }
-.libraryBody {
+.library-body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80%;
-    height:900px;
+    width: 68%;
+    min-height:200px;
+    margin-top: 30px;
+    padding-bottom: 40px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 #library {
     background: none;
@@ -253,7 +257,7 @@ input:target {
 label {
     padding-left: 6px;
 }
-.labelModal {
+.label-modal {
     position: relative;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -263,7 +267,7 @@ label {
     padding-left: 60px;
     padding-right: 15px;
 }
-.labelModal input {
+.label-modal input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -280,11 +284,11 @@ label {
     border-radius: 50%;
 }
 
-.labelModal:hover input ~ .checkmark {
+.label-modal:hover input ~ .checkmark {
   background-color: #dbd0c0d7;
 }
 
-.labelModal input:checked ~ .checkmark {
+.label-modal input:checked ~ .checkmark {
   background-color: #F9CF93;
 }
 
@@ -294,11 +298,11 @@ label {
   display: none;
 }
 
-.labelModal input:checked ~ .checkmark:after {
+.label-modal input:checked ~ .checkmark:after {
   display: block;
 }
 
-.labelModal .checkmark:after {
+.label-modal .checkmark:after {
     top: 9px;
     left: 9px;
     width: 8px;
