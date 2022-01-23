@@ -230,6 +230,9 @@ input:target {
     font-size: 80px;
     font-weight: bolder;
     margin-top: 40px;
+    padding-bottom: 20px;
+    border-bottom: 4px solid #F9CF93;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
 }
 .library-body {
     display: flex;
