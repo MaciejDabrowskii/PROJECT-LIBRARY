@@ -240,10 +240,10 @@ input:target {
     position: absolute;
     z-index: 3;
     left: 220px;
-    top: 150px;
+    top: 140px;
     Font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     color: #F9CF93;
-    font-size: 80px;
+    font-size: 100px;
     font-weight: bolder;
 }
 .library-header {

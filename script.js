@@ -23,8 +23,7 @@ addButton.addEventListener("click", ()=> {
         const title = document.getElementById("inputTitle");
         const author = document.getElementById("inputAuthor");
         const pagesNumber = document.getElementById("inputNumber");
-        const radioButtons = document.querySelectorAll(('input[name="read"]'));
-        let alreadyRead = checkButton(radioButtons);
+        let alreadyRead = checkButton();
         const book = new Book(title.value, author.value, pagesNumber.value, alreadyRead)
         myLibrary.push(book);
         reset();
@@ -154,12 +153,11 @@ function removeSpanStyle() {
         }
     })
 };
-function checkButton(radioButtons) {
+function checkButton() {
+    const radioButtons = Array.from(document.querySelectorAll(('input[name="read"]')));
         for(let button of radioButtons) {
         if (button.checked) {
             return button.value
-        }else {
-            return 'Indefinite'
         }
     }
 };
