@@ -46,10 +46,16 @@ body {
     width: 50%;
     font-size: 55px;
     padding:7px;
-    transition: 800ms;
     margin: 25px 0;
+    transition-property: background-color, transform;
+    transition-duration: 800ms, 200ms;
 }
 #addToLibrary:hover {
+    background-color: white;
+    cursor: pointer;
+}
+#addToLibrary:active {
+    transform: translateY(2px);
     background-color: white;
     cursor: pointer;
 }
@@ -269,7 +275,8 @@ input:target {
     color: #ffffff;
     font-size: 50px;
     font-weight: bold;
-    transition:800ms;
+    transition-property: background-color, transform;
+    transition-duration: 800ms, 200ms;
 }
 #open {
     margin-top: 30px;
@@ -281,7 +288,18 @@ input:target {
     color: #ffffff;
     font-size: 50px;
     font-weight: bold;
-    transition: 800ms;
+    transition-property: background-color, transform;
+    transition-duration: 800ms, 200ms;
+}
+#open:active {
+    transform: translateY(3px);
+    background-color:#F9E4C8;
+    cursor: pointer;
+}
+#library:active {
+    transform: translateY(3px);
+    background-color:#F9E4C8;
+    cursor: pointer;
 }
 #library:hover {
     background-color:#F9E4C8;
@@ -357,8 +375,10 @@ label {
     font-size: 20px;
     font-weight: bold;
     margin: 0 0 8px 8px;
-    transition: 400ms;
+    transition-property: background-color, transform;
+    transition-duration: 400ms, 200ms,;
 }
+
 .cardButton1 {
     width: 284px;
     height: 70px;
@@ -371,11 +391,20 @@ label {
     margin-left: 8px;
     transition: 300px;
 }
+
 .cardButton0:hover {
     background-color:#F9E4C8;
 }
 .cardButton1:hover {
     background-color:#F9E4C8;
+}
+.cardButton0:active {
+    transform: translateY(2px);
+    background-color:#F9E4C8;
+}
+.cardButton1:active {
+    transform: translateY(3px);
+    background-color: #F9E4C8;
 }
 p {
     margin: 0;

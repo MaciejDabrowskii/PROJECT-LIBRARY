@@ -50,11 +50,17 @@ libraryButton.addEventListener('click', () => {
             removeAllChildNodes(bookCardsDiv);
             addingBookcards(bookCardsDiv);
             deleteButtonFunctions();
-            switchButtonFunctions()
+            switchButtonFunctions();
         }
     }
 })
 
+overlay.addEventListener('click', () => {
+    const modals = document.querySelectorAll('.modal.active')
+    modals.forEach(modal => {
+        reset();
+    })
+})
 
 function removeAllChildNodes(parent) {
     while (parent.firstChild) {
@@ -86,12 +92,14 @@ function switchButtonFunctions() {
     buttonSwitchRead.forEach((button, index) => {
         button.addEventListener("click", () => {
 
-            if (typeof myLibrary[index].alreadyRead === 'undefined' || myLibrary[index].alreadyRead === "No") {
+            if (typeof myLibrary[index].alreadyRead === null || myLibrary[index].alreadyRead === "No") {
                 myLibrary[index].alreadyRead = "Yes";
             }
             else {
                 myLibrary[index].alreadyRead = "No";
             }
+            const bookCardsDiv = document.querySelector('.cardsSpace');
+            refreshDiv(bookCardsDiv);
         });
     });
 }
@@ -101,22 +109,24 @@ function deleteButtonFunctions() {
     buttonDeleteBook.forEach((button, index) => {
         button.addEventListener("click", () => {
             myLibrary.splice(index, 1);
+            const bookCardsDiv = document.querySelector('.cardsSpace');
+            refreshDiv(bookCardsDiv);
         });
     });
 }
 
-overlay.addEventListener('click', () => {
-    const modals = document.querySelectorAll('.modal.active')
-    modals.forEach(modal => {
-        reset();
-    })
-})
+function refreshDiv(bookCardsDiv) {
+    removeAllChildNodes(bookCardsDiv);
+    addingBookcards(bookCardsDiv);
+    deleteButtonFunctions();
+    switchButtonFunctions();
+}
 
 function addingBookcards(bookCardsDiv) {
     myLibrary.forEach((book, i) => {
         const div = document.createElement('div');
         div.classList.add('book-card');
-        div.innerHTML = '<p>' + `Title: <span class="card-data">${book.title}</span>` + '</p>' + '<p>' + `Author: <span class="card-data">${book.author}</span>` + '</p>' + '<p>' + `Number of pages: <span class="card-data">${book.pagesNumber}</span>` + '</p>' + '<p>' + `Already read: <span class="card-data">${book.alreadyRead}</span>` + '</p>';
+        div.insertAdjacentHTML( 'beforeend', '<p>' + `Title: <span class="card-data">${book.title}</span>` + '</p>' + '<p>' + `Author: <span class="card-data">${book.author}</span>` + '</p>' + '<p>' + `Number of pages: <span class="card-data">${book.pagesNumber}</span>` + '</p>' + '<p>' + `Already read: <span class="card-data">${book.alreadyRead}</span>` + '</p>');
         bookCardsDiv.appendChild(div);
         const divBookCard = document.querySelectorAll('.book-card');
         removeSpanStyle();
@@ -125,12 +135,13 @@ function addingBookcards(bookCardsDiv) {
             if (j === 0) {
                 const cardButton = document.createElement('button');
                 cardButton.classList.add(`cardButton${j}`);
-                cardButton.innerHTML = `Delete book <span class="x-circle">&times;</span>`;
+                cardButton.insertAdjacentHTML( 'beforeend', `Delete book <span class="x-circle">&times;</span>`);
                 divBookCard[i].appendChild(cardButton);
+
             } else {
                 const cardButton = document.createElement('button');
                 cardButton.classList.add(`cardButton${j}`);
-                cardButton.innerHTML = `Already read <span class="swap">⇵</span>`;
+                cardButton.insertAdjacentHTML( 'beforeend', `Already read <span class="swap">⇵</span>`);
                 divBookCard[i].appendChild(cardButton);
             }
         }
