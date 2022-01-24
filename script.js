@@ -23,9 +23,8 @@ addButton.addEventListener("click", ()=> {
         const title = document.getElementById("inputTitle");
         const author = document.getElementById("inputAuthor");
         const pagesNumber = document.getElementById("inputNumber");
-        const radioButton = document.querySelectorAll(('input[name="read"]'));
-        let alreadyRead;
-        checkButton(radioButton);
+        const radioButtons = document.querySelectorAll(('input[name="read"]'));
+        let alreadyRead = checkButton(radioButtons);
         const book = new Book(title.value, author.value, pagesNumber.value, alreadyRead)
         myLibrary.push(book);
         reset();
@@ -92,7 +91,7 @@ function switchButtonFunctions() {
     buttonSwitchRead.forEach((button, index) => {
         button.addEventListener("click", () => {
 
-            if (typeof myLibrary[index].alreadyRead === null || myLibrary[index].alreadyRead === "No") {
+            if (typeof myLibrary[index].alreadyRead === 'undefined' || myLibrary[index].alreadyRead === "No") {
                 myLibrary[index].alreadyRead = "Yes";
             }
             else {
@@ -155,10 +154,10 @@ function removeSpanStyle() {
         }
     })
 };
-function checkButton(radioButton) {
-    radioButton.forEach(button => {
-        if(button.checked) {
-            alreadyRead = button.value
+function checkButton(radioButtons) {
+        for(let button of radioButtons) {
+        if (button.checked) {
+            return button.value
         }
-    })
+    }
 };
