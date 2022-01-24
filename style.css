@@ -33,6 +33,7 @@ body {
     justify-content: end;
     gap: 90px;
     border-bottom: 5px solid #F9CF93;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
 }
 #addToLibrary {
     Font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -207,6 +208,8 @@ input:target {
     justify-content: center;
     flex: 1 0 auto;
     flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 35px;
 }
 #bookPick {
     height: auto;
