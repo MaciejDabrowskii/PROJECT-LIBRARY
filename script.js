@@ -158,6 +158,8 @@ function checkButton(radioButtons) {
         for(let button of radioButtons) {
         if (button.checked) {
             return button.value
+        }else {
+            return 'Indefinite'
         }
     }
 };
