@@ -11,7 +11,6 @@ openButton.addEventListener('click', function() {
         const modal = document.getElementById('modal');
         modal.classList.add('active');
         overlay.classList.add('active');
-        styleRadioButton()
     }
 );
 
@@ -25,16 +24,8 @@ addButton.addEventListener("click", ()=> {
         const author = document.getElementById("inputAuthor");
         const pagesNumber = document.getElementById("inputNumber");
         const radioButton = document.querySelectorAll(('input[name="read"]'));
-        
         let alreadyRead;
-        checkButton();
-        function checkButton() {
-            radioButton.forEach(button => {
-                if(button.checked) {
-                    alreadyRead = button.value
-                }
-            })
-        };
+        checkButton(radioButton);
         const book = new Book(title.value, author.value, pagesNumber.value, alreadyRead)
         myLibrary.push(book);
         reset();
@@ -117,7 +108,6 @@ function deleteButtonFunctions() {
 overlay.addEventListener('click', () => {
     const modals = document.querySelectorAll('.modal.active')
     modals.forEach(modal => {
-        
         reset();
     })
 })
@@ -129,6 +119,7 @@ function addingBookcards(bookCardsDiv) {
         div.innerHTML = '<p>' + `Title: <span class="card-data">${book.title}</span>` + '</p>' + '<p>' + `Author: <span class="card-data">${book.author}</span>` + '</p>' + '<p>' + `Number of pages: <span class="card-data">${book.pagesNumber}</span>` + '</p>' + '<p>' + `Already read: <span class="card-data">${book.alreadyRead}</span>` + '</p>';
         bookCardsDiv.appendChild(div);
         const divBookCard = document.querySelectorAll('.book-card');
+        removeSpanStyle();
 
         for (let j = 0; j < 2; j++) {
             if (j === 0) {
@@ -145,13 +136,18 @@ function addingBookcards(bookCardsDiv) {
         }
     });
 }
-
-function styleRadioButton() {
-    const radioButton1 = document.querySelector(".radioButton");
-    radioButton1.addEventListener("mouseenter", (e => {
-        radioButton1.classList.add("entered")
-    }));
-    radioButton1.addEventListener("mouseleave", (e => {
-        radioButton1.classList.remove("entered")
-    }));
-}
+function removeSpanStyle() {
+    let spans = document.querySelectorAll('.card-data');
+    spans.forEach(span => {
+        if (span.innerHTML === "") {
+            span.classList.remove('card-data');
+        }
+    })
+};
+function checkButton(radioButton) {
+    radioButton.forEach(button => {
+        if(button.checked) {
+            alreadyRead = button.value
+        }
+    })
+};

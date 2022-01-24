@@ -14,7 +14,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
-    transition: 200ms ease-in-out;
+    transition: 270ms ease-in-out;
     z-index: 10;
     background-color:#F9E4C8;
     width: 950px;
@@ -45,9 +45,8 @@ body {
     width: 50%;
     font-size: 55px;
     padding:7px;
-    transition: 0.5s;
+    transition: 800ms;
     margin: 25px 0;
-    transition:400ms;
 }
 #addToLibrary:hover {
     background-color: white;
@@ -93,7 +92,7 @@ color: #ffffff;
     width: 100%;
     font-size: 55px;
     padding:5px;
-    transition: 0.5s;
+    transition: 0.8s;
     margin-bottom: 8px;
 }
 input:focus {
@@ -123,13 +122,15 @@ input:target {
     font-size: 30px;
     margin-left: 14px;
     padding-right: 11px;
+    transition:800ms;
 }
-.radioButton.entered {
+.radioButton:hover {
     display: flex;
     position: relative;
     align-items: center;
     justify-content: center;
-    border: 3px solid #f9cf93;
+    border: 3px solid;
+    border-color: #f9cf93;
     color: #f9cf93;
     text-align: center;
     Font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -253,6 +254,7 @@ input:target {
     color: #ffffff;
     font-size: 50px;
     font-weight: bold;
+    transition:800ms;
 }
 #open {
     margin-top: 30px;
@@ -264,6 +266,7 @@ input:target {
     color: #ffffff;
     font-size: 50px;
     font-weight: bold;
+    transition: 800ms;
 }
 #library:hover {
     background-color:#F9E4C8;
@@ -361,7 +364,7 @@ label {
 }
 p {
     margin: 0;
-    padding:20px;
+    padding:20px 5px;
     border-bottom: 2px solid #F9CF93;
 }
 p:last-of-type {
@@ -382,7 +385,7 @@ p:last-of-type {
     padding: 5px 10px 5px 11px;
     border-radius: 50%;
     font-size: 20px;
-    margin-left: 10px;
+    margin-left: 18px;
 }
 .card-data {
     Font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -391,5 +394,5 @@ p:last-of-type {
     color: #ffffff;
     background-color: #F9CF93;
     padding: 1px 4px;
-    border-radius: 8px;
+    /* border-radius: 8px; */
 }
